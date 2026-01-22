@@ -10,40 +10,42 @@
         margin: 0;
         padding: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #001a33; 
+        /* FIXED: This color matches the very top of your new sky image */
+        background-color: #f0f7f4; 
     }
 
     /* MAIN CONTAINER */
     .parallax-container {
-        min-height: 350vh; /* Increased height to make the journey longer */
+        /* Adjusted height to match your taller image */
+        min-height: 450vh; 
         position: relative;
+        /* SYNCED: Now looking for your new filename */
         background-image: url('tree-roots2.png'); 
         background-size: 100% auto; 
         background-position: center top;
         background-repeat: no-repeat;
     }
 
-    /* HEADER AREA - Moved higher into the sky */
+    /* HEADER AREA - Floating in your new expanded sky */
     .header-container {
         position: absolute;
-        top: 2vh; 
+        top: 5vh; 
         width: 100%;
         text-align: center;
         padding: 20px;
+        z-index: 10;
     }
 
     h1 { 
-        /* OCEAN BLUE COLOR */
         color: #002147; 
         font-size: 4.5em; 
         margin: 0; 
         font-weight: 800;
-        /* Subtle light glow to help it pop against any clouds */
         text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4); 
     }
 
     h3 { 
-        color: #333; /* Dark Grey for contrast in the sky */
+        color: #333; 
         font-weight: 400; 
         font-size: 1.6em; 
         margin: 5px 0; 
@@ -56,27 +58,20 @@
         font-size: 1.1em;
     }
 
-    .scroll-hint {
-        color: #555;
-        margin-top: 20px;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    /* STEPS AREA - Pushed down to keep the tree intact */
+    /* STEPS AREA - Realignment */
     .steps-container {
-        /* This pushes the buttons below the bottom of the tree/roots image */
-        padding-top: 130vh; 
+        /* CHANGED: Pushed up to 90vh to account for your new image proportions */
+        padding-top: 90vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 250px; 
-        padding-bottom: 200px;
+        /* Space between buttons as you descend */
+        gap: 350px; 
+        padding-bottom: 300px;
     }
 
     .step-btn {
-        background: rgba(0, 33, 71, 0.85); /* Ocean blue buttons */
+        background: #002147; 
         color: #ffd700; 
         border: 2px solid #ffd700;
         padding: 18px 45px;
@@ -84,13 +79,12 @@
         text-decoration: none;
         font-size: 1.2rem;
         font-weight: bold;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
     }
 
     .step-btn:hover {
-        transform: translateY(-5px);
+        transform: translateY(-10px);
         background: #ffd700;
         color: #002147;
     }
@@ -103,7 +97,7 @@
             <h1>Easy Peacey</h1>
             <h3>5 Simple Steps to Inner Peace and Joy</h3>
             <p class="mike-name">A project by Mike Callahan</p>
-            <p class="scroll-hint">↓ Scroll to explore the roots ↓</p>
+            <p style="color: #666; margin-top: 20px; font-size: 0.8em; letter-spacing: 2px;">↓ DESCEND INTO THE JOURNEY ↓</p>
         </div>
 
         <div class="steps-container">
