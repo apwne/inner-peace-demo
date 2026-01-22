@@ -13,21 +13,37 @@
             background-color: #001a33;
         }
 
-        /* MAIN CONTAINER */
-        .parallax-container {
-            min-height: 350vh;
-            position: relative;
-            background-image: 
-                linear-gradient(to bottom, 
-                rgba(0, 26, 51, 0.8) 0%,      /* Deep ocean blue at top */
-                rgba(0, 33, 71, 0.9) 40%,     /* Mid ocean gradient */
-                rgba(0, 147, 200, 0.7) 70%,   /* Bluish roots transition */
-                transparent 100%),             /* Fade to image */
-            url('tree-roots2.png');          /* Your new image */
-            background-size: 150% auto;            /* Bigger tree */
-            background-position: center top;
-            background-repeat: no-repeat;
-        }
+        /* MAIN CONTAINER - Large tree + bottom-only gradient */
+.parallax-container {
+    min-height: 350vh;
+    position: relative;
+    background-image: url('tree-roots2.png');  /* Your new image filename */
+    background-size: 150% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+/* NEW: Bottom gradient overlay only */
+.parallax-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40vh;  /* Adjust to cover just the image bottom/sharp edge */
+    background: linear-gradient(to top, 
+        rgba(0, 147, 200, 0.8) 0%,    /* Bluish ocean at very bottom */
+        rgba(0, 33, 71, 0.6) 30%,     /* Mid transition */
+        transparent 100%);             /* Fade up into roots */
+    pointer-events: none;  /* Doesn't block clicks */
+    z-index: 1;
+}
+
+.steps-container {
+    position: relative;
+    z-index: 2;  /* Ensures steps above gradient */
+}
+
 
         /* HEADER AREA */
 .header-container {
