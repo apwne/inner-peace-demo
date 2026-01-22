@@ -9,25 +9,24 @@
     body, html {
         margin: 0;
         padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #011627; /* Matches the deep ocean at the bottom */
+        font-family: 'Segoe UI', sans-serif;
+        /* This gradient blends the top sky color into the deep ocean blue */
+        background: linear-gradient(to bottom, #dbe7e9 0%, #dbe7e9 20%, #011627 60%);
     }
 
     /* MAIN CONTAINER */
     .parallax-container {
-        min-height: 400vh; /* Long scroll for the roots */
+        min-height: 400vh; 
         position: relative;
         background-image: url('tree-roots.png'); 
-        background-size: 110% auto; 
-        
-        /* Pushes the tree down 30% of the screen height to leave room for text */
-        background-position: center 30vh; 
+        /* Tree is 20% bigger as requested */
+        background-size: 120% auto; 
+        /* This pushes the tree down 25% of the screen height */
+        background-position: center 25vh; 
         background-repeat: no-repeat;
-        /* The top area will be a light sky blue until the image starts */
-        background-color: #e0f2f1; 
     }
 
-    /* HEADER AREA - Positioned in the blank sky space */
+    /* HEADER AREA - Now sitting in the 'Expanded Sky' */
     .header-container {
         position: absolute;
         top: 5vh; 
@@ -37,52 +36,40 @@
     }
 
     h1 { 
-        /* A vibrant ocean blue that is readable but thematic */
-        color: #005b96; 
+        /* Deep ocean blue for the title */
+        color: #002147; 
         font-size: 4.5em; 
         margin: 0; 
         font-weight: 800;
-        /* A white glow makes it pop even if it overlaps a cloud or leaf */
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); 
     }
 
     h3 { 
-        color: #2c3e50; 
-        font-weight: 600; 
+        color: #333; 
+        font-weight: 500; 
         font-size: 1.6em; 
         margin: 5px 0; 
     }
 
     .mike-name { 
         font-style: italic; 
-        color: #34495e; 
+        color: #555; 
         margin-top: 10px; 
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
-    .scroll-hint {
-        color: #7f8c8d;
-        margin-top: 30px;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        animation: fade 2s infinite;
-    }
-
-    @keyframes fade { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
-
-    /* STEPS AREA - Pushed down past the tree canopy */
+    /* STEPS AREA - Pushed deep into the roots */
     .steps-container {
-        padding-top: 160vh; 
+        /* This padding ensures the entire tree/roots image is seen first */
+        padding-top: 150vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 300px; 
-        padding-bottom: 250px;
+        gap: 400px; 
+        padding-bottom: 200px;
     }
 
     .step-btn {
-        background: #005b96; 
+        background: #002147; 
         color: #ffd700; 
         border: 2px solid #ffd700;
         padding: 20px 50px;
@@ -90,15 +77,14 @@
         text-decoration: none;
         font-size: 1.3rem;
         font-weight: bold;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        transition: 0.3s ease;
     }
 
     .step-btn:hover {
-        transform: translateY(-10px) scale(1.05);
+        transform: translateY(-10px);
         background: #ffd700;
-        color: #005b96;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        color: #002147;
     }
 </style>
 </head>
@@ -109,7 +95,6 @@
             <h1>Easy Peacey</h1>
             <h3>5 Simple Steps to Inner Peace and Joy</h3>
             <p class="mike-name">A project by Mike Callahan</p>
-            <p class="scroll-hint">↓ Descend into the journey ↓</p>
         </div>
 
         <div class="steps-container">
