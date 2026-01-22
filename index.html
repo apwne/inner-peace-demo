@@ -5,46 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Easy Peacey Demo</title>
 <style>
-    /* RESET - No margins, no forced colors */
+    /* RESET */
     body, html {
         margin: 0;
         padding: 0;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        background-color: #011627; /* Fallback for the very bottom */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Only show deep black if someone scrolls past the very end of your image */
+        background-color: #000000; 
     }
 
-    /* THE PAGE WRAPPER */
+    /* MAIN CONTAINER */
     .parallax-container {
-        min-height: 400vh; /* Long scroll for roots */
+        /* Long scroll to handle your tall image and the roots */
+        min-height: 500vh; 
         position: relative;
-        /* Matches your image filename exactly */
         background-image: url('tree-roots.png'); 
+        /* CRITICAL: Fits width exactly, lets height be natural. No stretching/cropping. */
         background-size: 100% auto; 
-        background-position: center top; /* Image starts at the very top */
+        /* CRITICAL: Starts image exactly at top edge. No shifting down. */
+        background-position: top center;
         background-repeat: no-repeat;
+        /* NO background-color here. Pure image at the top. */
     }
 
-    /* THE TEXT - Floating at the very top of your expanded sky */
+    /* HEADER AREA - Floating at the top */
     .header-container {
         position: absolute;
-        top: 8vh; 
+        /* Adjust this if you need to move text further down your new sky */
+        top: 5vh; 
         width: 100%;
         text-align: center;
         z-index: 10;
     }
 
     h1 { 
+        /* A nice deep blue that contrasts well with a light sky */
         color: #002147; 
-        font-size: 4.5rem; 
+        font-size: 4.5em; 
         margin: 0; 
         font-weight: 800;
-        letter-spacing: -2px;
+        letter-spacing: -1px;
     }
 
     h3 { 
         color: #333; 
         font-weight: 400; 
-        font-size: 1.6rem; 
+        font-size: 1.7em; 
         margin: 5px 0; 
     }
 
@@ -52,16 +58,18 @@
         font-style: italic; 
         color: #555; 
         margin-top: 10px; 
+        font-size: 1.2em;
     }
 
-    /* THE BUTTONS - Positioned deep in the root section */
+    /* STEPS AREA - Deep in the roots */
     .steps-container {
-        /* Adjust this padding to make sure buttons align with your roots */
-        padding-top: 160vh; 
+        /* You might need to increase this number if your new image is very very tall */
+        padding-top: 180vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 350px; 
+        /* Gap between buttons */
+        gap: 400px; 
         padding-bottom: 300px;
     }
 
@@ -72,7 +80,7 @@
         padding: 20px 50px;
         border-radius: 60px;
         text-decoration: none;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         font-weight: bold;
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         transition: transform 0.3s ease;
