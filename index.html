@@ -9,9 +9,9 @@
     body, html {
         margin: 0;
         padding: 0;
-        font-family: 'Segoe UI', sans-serif;
-        /* This gradient blends the top sky color into the deep ocean blue */
-        background: linear-gradient(to bottom, #dbe7e9 0%, #dbe7e9 20%, #011627 60%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Matches the warm sky color at the very top of your image */
+        background-color: #fcf6e8; 
     }
 
     /* MAIN CONTAINER */
@@ -19,14 +19,15 @@
         min-height: 400vh; 
         position: relative;
         background-image: url('tree-roots.png'); 
-        /* Tree is 20% bigger as requested */
-        background-size: 120% auto; 
-        /* This pushes the tree down 25% of the screen height */
-        background-position: center 25vh; 
+        /* Keeping tree size identifiable */
+        background-size: 110% auto; 
+        
+        /* Pushes the tree image down to leave a clear sky for text */
+        background-position: center 30vh; 
         background-repeat: no-repeat;
     }
 
-    /* HEADER AREA - Now sitting in the 'Expanded Sky' */
+    /* HEADER AREA - Now sitting in the clear, expanded sky */
     .header-container {
         position: absolute;
         top: 5vh; 
@@ -36,36 +37,46 @@
     }
 
     h1 { 
-        /* Deep ocean blue for the title */
+        /* Using the dark ocean blue for the title */
         color: #002147; 
         font-size: 4.5em; 
         margin: 0; 
         font-weight: 800;
+        letter-spacing: -1px;
     }
 
     h3 { 
-        color: #333; 
-        font-weight: 500; 
-        font-size: 1.6em; 
+        color: #444; 
+        font-weight: 400; 
+        font-size: 1.7em; 
         margin: 5px 0; 
     }
 
     .mike-name { 
         font-style: italic; 
-        color: #555; 
+        color: #666; 
         margin-top: 10px; 
-        font-size: 1.2rem;
+        font-size: 1.2em;
     }
 
-    /* STEPS AREA - Pushed deep into the roots */
+    /* THE DESCENT HINT */
+    .scroll-hint {
+        color: #888;
+        margin-top: 30px;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    /* STEPS AREA - Positioned deep in the roots */
     .steps-container {
-        /* This padding ensures the entire tree/roots image is seen first */
+        /* Starts buttons after the tree and roots image finishes */
         padding-top: 150vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 400px; 
-        padding-bottom: 200px;
+        padding-bottom: 300px;
     }
 
     .step-btn {
@@ -77,7 +88,7 @@
         text-decoration: none;
         font-size: 1.3rem;
         font-weight: bold;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         transition: 0.3s ease;
     }
 
@@ -91,10 +102,12 @@
 <body>
 
     <div class="parallax-container">
+        
         <div class="header-container">
             <h1>Easy Peacey</h1>
             <h3>5 Simple Steps to Inner Peace and Joy</h3>
             <p class="mike-name">A project by Mike Callahan</p>
+            <p class="scroll-hint">↓ Descend into the journey ↓</p>
         </div>
 
         <div class="steps-container">
@@ -104,6 +117,7 @@
             <a href="step4.html" class="step-btn">Step 4: Be Amazed</a>
             <a href="step5.html" class="step-btn">Step 5: Manifest Peace</a>
         </div>
+
     </div>
 
 </body>
