@@ -7,78 +7,92 @@
 <style>
     /* RESET */
     body, html {
-        height: 100%;
         margin: 0;
         padding: 0;
-        font-family: sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #001a33; 
     }
 
     /* MAIN CONTAINER */
     .parallax-container {
-        min-height: 250vh; 
+        min-height: 350vh; /* Increased height to make the journey longer */
         position: relative;
         background-image: url('tree-roots.png'); 
-        /* Tree made 20% bigger */
-        background-size: 125% auto; 
+        background-size: 120% auto; 
         background-position: center top;
         background-repeat: no-repeat;
     }
 
-    /* HEADER AREA */
+    /* HEADER AREA - Moved higher into the sky */
     .header-container {
         position: absolute;
-        top: 5vh; 
+        top: 2vh; 
         width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .header-box {
-        /* Opacity made much lighter (from 0.5 down to 0.15) */
-        background: rgba(255, 255, 255, 0.15);
-        padding: 30px 50px;
-        border-radius: 20px;
         text-align: center;
-        color: #001a33;
-        /* Blur effect helps readability even with light opacity */
-        backdrop-filter: blur(8px);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
     }
 
-    h1 { font-size: 4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.4); }
-    h3 { font-weight: 300; font-size: 1.5em; margin: 10px 0; }
-    .mike-name { font-style: italic; color: #ffd700; margin-top: 15px; }
+    h1 { 
+        /* OCEAN BLUE COLOR */
+        color: #002147; 
+        font-size: 4.5em; 
+        margin: 0; 
+        font-weight: 800;
+        /* Subtle light glow to help it pop against any clouds */
+        text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4); 
+    }
 
-    /* STEPS AREA */
+    h3 { 
+        color: #333; /* Dark Grey for contrast in the sky */
+        font-weight: 400; 
+        font-size: 1.6em; 
+        margin: 5px 0; 
+    }
+
+    .mike-name { 
+        font-style: italic; 
+        color: #555; 
+        margin-top: 10px; 
+        font-size: 1.1em;
+    }
+
+    .scroll-hint {
+        color: #555;
+        margin-top: 20px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* STEPS AREA - Pushed down to keep the tree intact */
     .steps-container {
-        /* Adjusted padding to account for the larger tree image */
-        padding-top: 100vh; 
+        /* This pushes the buttons below the bottom of the tree/roots image */
+        padding-top: 130vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 200px; 
-        padding-bottom: 100px;
+        gap: 250px; 
+        padding-bottom: 200px;
     }
 
     .step-btn {
-        background: rgba(0, 30, 60, 0.8); 
+        background: rgba(0, 33, 71, 0.85); /* Ocean blue buttons */
         color: #ffd700; 
         border: 2px solid #ffd700;
-        padding: 20px 40px;
+        padding: 18px 45px;
         border-radius: 50px;
         text-decoration: none;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: bold;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
     }
 
     .step-btn:hover {
-        transform: scale(1.1);
+        transform: translateY(-5px);
         background: #ffd700;
-        color: #001a33;
+        color: #002147;
     }
 </style>
 </head>
@@ -86,12 +100,10 @@
 
     <div class="parallax-container">
         <div class="header-container">
-            <div class="header-box">
-                <h1>Easy Peacey</h1>
-                <h3>5 Simple Steps to Inner Peace and Joy</h3>
-                <p class="mike-name">A project by Mike Callahan</p>
-                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">↓ Scroll down to explore the roots ↓</p>
-            </div>
+            <h1>Easy Peacey</h1>
+            <h3>5 Simple Steps to Inner Peace and Joy</h3>
+            <p class="mike-name">A project by Mike Callahan</p>
+            <p class="scroll-hint">↓ Scroll to explore the roots ↓</p>
         </div>
 
         <div class="steps-container">
