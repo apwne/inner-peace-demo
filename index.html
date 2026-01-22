@@ -15,35 +15,40 @@
 
     /* MAIN CONTAINER */
     .parallax-container {
-        min-height: 350vh; /* Increased height to make the journey longer */
+        min-height: 350vh; 
         position: relative;
         background-image: url('tree-roots.png'); 
         background-size: 120% auto; 
-        background-position: center top;
+        
+        /* --- THE FIX IS HERE --- */
+        /* Instead of 'center top', we use '25vh' to push it down */
+        /* This creates empty sky space at the very top for the text */
+        background-position: center 25vh; 
+        
         background-repeat: no-repeat;
     }
 
-    /* HEADER AREA - Moved higher into the sky */
+    /* HEADER AREA - Kept at the top */
     .header-container {
         position: absolute;
         top: 2vh; 
         width: 100%;
         text-align: center;
         padding: 20px;
+        /* Ensures text sits on top of everything */
+        z-index: 10;
     }
 
     h1 { 
-        /* OCEAN BLUE COLOR */
         color: #002147; 
         font-size: 4.5em; 
         margin: 0; 
         font-weight: 800;
-        /* Subtle light glow to help it pop against any clouds */
         text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4); 
     }
 
     h3 { 
-        color: #333; /* Dark Grey for contrast in the sky */
+        color: #333; 
         font-weight: 400; 
         font-size: 1.6em; 
         margin: 5px 0; 
@@ -64,10 +69,10 @@
         letter-spacing: 2px;
     }
 
-    /* STEPS AREA - Pushed down to keep the tree intact */
+    /* STEPS AREA */
     .steps-container {
-        /* This pushes the buttons below the bottom of the tree/roots image */
-        padding-top: 130vh; 
+        /* Increased slightly to account for the image moving down */
+        padding-top: 140vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -76,7 +81,7 @@
     }
 
     .step-btn {
-        background: rgba(0, 33, 71, 0.85); /* Ocean blue buttons */
+        background: rgba(0, 33, 71, 0.85); 
         color: #ffd700; 
         border: 2px solid #ffd700;
         padding: 18px 45px;
