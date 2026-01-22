@@ -11,57 +11,57 @@
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background-color: #001a33; /* Dark blue background for below the image */
+        background-color: #001a33; 
     }
 
     /* MAIN CONTAINER */
     .parallax-container {
         min-height: 250vh; 
         position: relative;
-        /* The image is now contained at the top and not stretched */
         background-image: url('tree-roots.png'); 
-        background-size: 100% auto; /* Width 100%, height auto-adjusts */
+        /* Tree made 20% bigger */
+        background-size: 120% auto; 
         background-position: center top;
         background-repeat: no-repeat;
     }
 
-    /* HEADER AREA (In the sky) */
+    /* HEADER AREA */
     .header-container {
         position: absolute;
-        top: 5vh; /* Positioned near the top */
+        top: 5vh; 
         width: 100%;
         display: flex;
         justify-content: center;
     }
 
     .header-box {
-        /* Semi-transparent dark box for readability */
-        background: rgba(0, 0, 0, 0.5);
+        /* Opacity made much lighter (from 0.5 down to 0.15) */
+        background: rgba(255, 255, 255, 0.15);
         padding: 30px 50px;
         border-radius: 20px;
         text-align: center;
         color: #fff;
-        backdrop-filter: blur(5px);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        /* Blur effect helps readability even with light opacity */
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    h1 { font-size: 4em; margin: 0; text-shadow: 2px 2px 4px #000; }
+    h1 { font-size: 4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.4); }
     h3 { font-weight: 300; font-size: 1.5em; margin: 10px 0; }
     .mike-name { font-style: italic; color: #ffd700; margin-top: 15px; }
 
-    /* STEPS AREA (Deep in the roots) */
+    /* STEPS AREA */
     .steps-container {
-        /* Pushes buttons down so you have to scroll */
-        padding-top: 80vh; 
+        /* Adjusted padding to account for the larger tree image */
+        padding-top: 100vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Spacing between the buttons */
-        gap: 150px; 
+        gap: 200px; 
         padding-bottom: 100px;
     }
 
-    /* BUTTON STYLING */
     .step-btn {
         background: rgba(0, 30, 60, 0.8); 
         color: #ffd700; 
@@ -79,21 +79,18 @@
         transform: scale(1.1);
         background: #ffd700;
         color: #001a33;
-        cursor: pointer;
     }
-
 </style>
 </head>
 <body>
 
     <div class="parallax-container">
-        
         <div class="header-container">
             <div class="header-box">
                 <h1>Easy Peacey</h1>
                 <h3>5 Simple Steps to Inner Peace and Joy</h3>
                 <p class="mike-name">A project by Mike Callahan</p>
-                <p style="margin-top: 20px; font-size: 0.9em;">↓ Scroll down to explore the roots ↓</p>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">↓ Scroll down to explore the roots ↓</p>
             </div>
         </div>
 
@@ -104,7 +101,6 @@
             <a href="step4.html" class="step-btn">Step 4: Be Amazed</a>
             <a href="step5.html" class="step-btn">Step 5: Manifest Peace</a>
         </div>
-
     </div>
 
 </body>
