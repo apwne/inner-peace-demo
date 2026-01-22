@@ -9,29 +9,26 @@
     body, html {
         margin: 0;
         padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        /* Only show deep black if someone scrolls past the very end of your image */
-        background-color: #000000; 
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        /* FIXED: This gradient blends the top sky into the deep water */
+        /* It ensures that no matter where the image ends, the background matches */
+        background: linear-gradient(to bottom, #fcf6e8 0%, #011627 30%, #011627 100%);
+        background-attachment: fixed;
     }
 
     /* MAIN CONTAINER */
     .parallax-container {
-        /* Long scroll to handle your tall image and the roots */
         min-height: 500vh; 
         position: relative;
         background-image: url('tree-roots.png'); 
-        /* CRITICAL: Fits width exactly, lets height be natural. No stretching/cropping. */
-        background-size: 100% auto; 
-        /* CRITICAL: Starts image exactly at top edge. No shifting down. */
+        background-size: 120% auto; 
         background-position: top center;
         background-repeat: no-repeat;
-        /* NO background-color here. Pure image at the top. */
     }
 
-    /* HEADER AREA - Floating at the top */
+    /* HEADER AREA */
     .header-container {
         position: absolute;
-        /* Adjust this if you need to move text further down your new sky */
         top: 5vh; 
         width: 100%;
         text-align: center;
@@ -39,42 +36,29 @@
     }
 
     h1 { 
-        /* A nice deep blue that contrasts well with a light sky */
         color: #002147; 
         font-size: 4.5em; 
         margin: 0; 
         font-weight: 800;
-        letter-spacing: -1px;
+        text-shadow: 0 0 10px rgba(255,255,255,0.5);
     }
 
-    h3 { 
-        color: #333; 
-        font-weight: 400; 
-        font-size: 1.7em; 
-        margin: 5px 0; 
-    }
-
-    .mike-name { 
-        font-style: italic; 
-        color: #555; 
-        margin-top: 10px; 
-        font-size: 1.2em;
-    }
+    h3 { color: #333; font-weight: 400; font-size: 1.7em; margin: 5px 0; }
+    .mike-name { font-style: italic; color: #555; margin-top: 10px; font-size: 1.2em; }
 
     /* STEPS AREA - Deep in the roots */
     .steps-container {
-        /* You might need to increase this number if your new image is very very tall */
-        padding-top: 180vh; 
+        /* This pushes the buttons down into the dark water area */
+        padding-top: 200vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Gap between buttons */
-        gap: 400px; 
-        padding-bottom: 300px;
+        gap: 450px; 
+        padding-bottom: 400px;
     }
 
     .step-btn {
-        background: #002147; 
+        background: rgba(0, 33, 71, 0.9); 
         color: #ffd700; 
         border: 2px solid #ffd700;
         padding: 20px 50px;
@@ -82,12 +66,13 @@
         text-decoration: none;
         font-size: 1.3rem;
         font-weight: bold;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        transition: transform 0.3s ease;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
     }
 
     .step-btn:hover {
-        transform: scale(1.05);
+        transform: scale(1.05) translateY(-5px);
         background: #ffd700;
         color: #002147;
     }
