@@ -3,119 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Peacey | Inner Peace Project</title>
+    <title>Easy Peacey Demo</title>
     <style>
         body, html {
             margin: 0; padding: 0;
-            background-color: #011627; /* Deep ocean blue for the very bottom */
-            font-family: 'Segoe UI', sans-serif;
+            background-color: #011627; /* Dark Ocean Blue */
+            font-family: sans-serif;
             color: white;
             overflow-x: hidden;
         }
 
-        /* FIXED BACKGROUND - Adjusted to make tree 20% smaller/more identifiable */
-        .background-layer {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100vh;
-            background-image: url('tree-roots.png');
-            /* Scaling to 80% width ensures the tree isn't too large/blurry */
-            background-size: 85% auto; 
-            background-position: center top;
-            background-repeat: no-repeat;
-            z-index: -1;
-            background-color: #87CEEB; /* Sky blue background for the image edges */
+        /* THE TREE IMAGE - Placed at the very top */
+        .tree-header {
+            width: 100%;
+            display: block;
+            margin: 0;
+            line-height: 0; /* Removes white gap below image */
+        }
+        
+        .tree-header img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .scroll-content {
-            position: relative;
-            z-index: 1;
-            /* Making the scrollable area much longer for the roots */
-            height: 400vh; 
-        }
-
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        /* THE TEXT OVERLAY */
+        .header-content {
+            position: absolute;
+            top: 50px;
+            width: 100%;
             text-align: center;
         }
 
         .glass-box {
-            /* Lower opacity as requested */
-            background: rgba(255, 255, 255, 0.05); 
-            backdrop-filter: blur(8px);
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.2); /* Very low opacity as requested */
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 20px;
         }
 
-        h1 { 
-            font-size: 3.5rem; 
-            margin: 0; 
-            /* Lower opacity for the text itself */
-            opacity: 0.8; 
-        }
-        
-        .author { 
-            color: #FFD700; 
-            font-style: italic; 
-            margin-top: 10px; 
-            opacity: 0.7; 
-        }
+        h1 { font-size: 3rem; margin: 0; opacity: 0.6; }
+        .author { color: #FFD700; opacity: 0.5; font-style: italic; }
 
-        .steps-container {
-            /* This starts the buttons way below the tree canopy */
-            padding-top: 80vh; 
+        /* THE LONG ROOTS AREA */
+        .roots-journey {
+            background: linear-gradient(to bottom, transparent, #011627 20%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Massive gaps to make the 'roots' feel very long */
-            gap: 500px; 
+            /* This height creates the long scrolling feeling */
+            padding-top: 50vh; 
+            padding-bottom: 100vh;
+            gap: 60vh; /* Space between buttons */
         }
 
         .step-btn {
-            background: rgba(255, 215, 0, 0.8); /* Semi-transparent gold */
+            background: #FFD700;
             color: #011627;
-            padding: 18px 40px;
+            padding: 20px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2rem;
-            transition: 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            transition: 0.3s;
         }
 
-        .step-btn:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.9);
-        }
+        .step-btn:hover { transform: scale(1.1); background: white; }
     </style>
 </head>
 <body>
 
-    <div class="background-layer"></div>
-
-    <div class="scroll-content">
-        <header>
+    <div class="tree-header">
+        <img src="tree-roots.png" alt="Tree over ocean">
+        
+        <div class="header-content">
             <div class="glass-box">
                 <h1>Easy Peacey</h1>
-                <p style="opacity: 0.7;">5 Simple Steps to Inner Peace and Joy</p>
+                <p style="opacity: 0.5;">5 Simple Steps to Inner Peace and Joy</p>
                 <div class="author">A project by Mike Callahan</div>
-                <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5;">↓ SCROLL DOWN INTO THE ROOTS ↓</p>
             </div>
-        </header>
-
-        <div class="steps-container">
-            <a href="step1.html" class="step-btn">Step 1: Slow Down</a>
-            <a href="step2.html" class="step-btn">Step 2: Open Up</a>
-            <a href="step3.html" class="step-btn">Step 3: Be Surprised</a>
-            <a href="step4.html" class="step-btn">Step 4: Be Amazed</a>
-            <a href="step5.html" class="step-btn">Step 5: Manifest Peace</a>
         </div>
+    </div>
+
+    <div class="roots-journey">
+        <a href="step1.html" class="step-btn">Step 1: Slow Down</a>
+        <a href="step2.html" class="step-btn">Step 2: Open Up</a>
+        <a href="step3.html" class="step-btn">Step 3: Be Surprised</a>
+        <a href="step4.html" class="step-btn">Step 4: Be Amazed</a>
+        <a href="step5.html" class="step-btn">Step 5: Manifest Peace</a>
     </div>
 
 </body>
