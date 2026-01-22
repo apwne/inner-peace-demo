@@ -9,70 +9,88 @@
     body, html {
         margin: 0;
         padding: 0;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        /* FIXED: This gradient blends the top sky into the deep water */
-        /* It ensures that no matter where the image ends, the background matches */
-        background: linear-gradient(to bottom, #fcf6e8 0%, #011627 30%, #011627 100%);
-        background-attachment: fixed;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #001a33; 
     }
 
     /* MAIN CONTAINER */
     .parallax-container {
-        min-height: 500vh; 
+        min-height: 350vh; /* Increased height to make the journey longer */
         position: relative;
         background-image: url('tree-roots.png'); 
         background-size: 120% auto; 
-        background-position: top center;
+        background-position: center top;
         background-repeat: no-repeat;
     }
 
-    /* HEADER AREA */
+    /* HEADER AREA - Moved higher into the sky */
     .header-container {
         position: absolute;
-        top: 5vh; 
+        top: 2vh; 
         width: 100%;
         text-align: center;
-        z-index: 10;
+        padding: 20px;
     }
 
     h1 { 
+        /* OCEAN BLUE COLOR */
         color: #002147; 
         font-size: 4.5em; 
         margin: 0; 
         font-weight: 800;
-        text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        /* Subtle light glow to help it pop against any clouds */
+        text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4); 
     }
 
-    h3 { color: #333; font-weight: 400; font-size: 1.7em; margin: 5px 0; }
-    .mike-name { font-style: italic; color: #555; margin-top: 10px; font-size: 1.2em; }
+    h3 { 
+        color: #333; /* Dark Grey for contrast in the sky */
+        font-weight: 400; 
+        font-size: 1.6em; 
+        margin: 5px 0; 
+    }
 
-    /* STEPS AREA - Deep in the roots */
+    .mike-name { 
+        font-style: italic; 
+        color: #555; 
+        margin-top: 10px; 
+        font-size: 1.1em;
+    }
+
+    .scroll-hint {
+        color: #555;
+        margin-top: 20px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* STEPS AREA - Pushed down to keep the tree intact */
     .steps-container {
-        /* This pushes the buttons down into the dark water area */
-        padding-top: 200vh; 
+        /* This pushes the buttons below the bottom of the tree/roots image */
+        padding-top: 130vh; 
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 450px; 
-        padding-bottom: 400px;
+        gap: 250px; 
+        padding-bottom: 200px;
     }
 
     .step-btn {
-        background: rgba(0, 33, 71, 0.9); 
+        background: rgba(0, 33, 71, 0.85); /* Ocean blue buttons */
         color: #ffd700; 
         border: 2px solid #ffd700;
-        padding: 20px 50px;
-        border-radius: 60px;
+        padding: 18px 45px;
+        border-radius: 50px;
         text-decoration: none;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: bold;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         transition: all 0.3s ease;
         backdrop-filter: blur(5px);
     }
 
     .step-btn:hover {
-        transform: scale(1.05) translateY(-5px);
+        transform: translateY(-5px);
         background: #ffd700;
         color: #002147;
     }
@@ -81,11 +99,11 @@
 <body>
 
     <div class="parallax-container">
-        
         <div class="header-container">
             <h1>Easy Peacey</h1>
             <h3>5 Simple Steps to Inner Peace and Joy</h3>
             <p class="mike-name">A project by Mike Callahan</p>
+            <p class="scroll-hint">↓ Scroll to explore the roots ↓</p>
         </div>
 
         <div class="steps-container">
@@ -95,7 +113,6 @@
             <a href="step4.html" class="step-btn">Step 4: Be Amazed</a>
             <a href="step5.html" class="step-btn">Step 5: Manifest Peace</a>
         </div>
-
     </div>
 
 </body>
